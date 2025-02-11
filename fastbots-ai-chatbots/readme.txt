@@ -4,7 +4,7 @@ Tags: AI, Chatbot, FastBots
 Requires at least: 5.2
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.0.5
+Stable tag: 1.0.8
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,10 +83,20 @@ Added short description.
 = 1.0.5 =
 Updated description.
 
+= 1.0.6 =
+Added crossOrigin to the embed script.
+
+= 1.0.7 =
+Updated stable tag.
+
+= 1.0.8 =
+Updated version.
+
 == Installation ==
 
 1. Install this plugin into your WordPress site.
 2. Go to **Embed / Share** page of your bot.
+
 3. Under **Using Embed Script** section you would see the embed script like so: `<script defer src="https://app.fastbots.ai/embed.js" data-bot-id="YOUR_BOT_ID"></script>`.
 4. Copy `https://app.fastbots.ai/embed.js` or your custom domain URL and paste it in **Source URL** input field.
 5. Copy `YOUR_BOT_ID (which might be someting like this: clvnszmoj00012e2flzihll25)` and paste it in **Bot ID** input field
