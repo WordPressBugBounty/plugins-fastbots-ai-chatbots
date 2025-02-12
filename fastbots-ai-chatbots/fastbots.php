@@ -3,7 +3,7 @@
  * Plugin Name:       FastBots
  * Plugin URI:        https://wordpress.org/plugins/fastbots/
  * Description: Easily add your FastBots AI chatbot to your WordPress site.
- * Version:           1.0.8
+ * Version:           1.0.10
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            FastBots
@@ -32,7 +32,6 @@ function fastbots_chatbot_to_header() {
 		scriptElement.src = '".$embed_code."';
 		scriptElement.setAttribute('data-bot-id', '".$embed_code_two."');
 		scriptElement.defer = true;
-		scriptElement.crossOrigin = 'anonymous';
 	  
 		document.head.appendChild(scriptElement);
 	  </script>";
