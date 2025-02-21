@@ -4,7 +4,7 @@ Tags: AI, Chatbot, FastBots
 Requires at least: 5.2
 Tested up to: 6.5
 Requires PHP: 7.2
-Stable tag: 1.0.10
+Stable tag: 1.0.12
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,12 @@ Updated version.
 Remove crossOrigin from the embed script.
 
 = 1.0.10 =
+Updated version.
+
+= 1.0.11 =
+Updated version and added fallback loader.
+
+= 1.0.12 =
 Updated version.
 
 == Installation ==
