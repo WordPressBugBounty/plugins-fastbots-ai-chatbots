@@ -2,9 +2,9 @@
 Contributors: fastbots
 Tags: AI, Chatbot, FastBots
 Requires at least: 5.2
-Tested up to: 6.5
+Tested up to: 6.8
 Requires PHP: 7.2
-Stable tag: 1.0.12
+Stable tag: 1.0.13
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,6 +103,9 @@ Updated version and added fallback loader.
 
 = 1.0.12 =
 Updated version.
+
+= 1.0.13 =
+Security: fixed authenticated (Administrator+) Stored Cross-Site Scripting via plugin settings (CVE-2026-6800). Source URL and Bot ID are now sanitized on save and properly escaped on output.
 
 == Installation ==
 

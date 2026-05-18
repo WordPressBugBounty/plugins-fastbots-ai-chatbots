@@ -56,9 +56,22 @@ add_action("admin_init", "fastbots_settings");
 
 function fastbots_settings()
 {
-    register_setting("fastbots-settings-group", "fastbots_chatbot_embed_code");
     register_setting(
         "fastbots-settings-group",
-        "fastbots_chatbot_embed_code_two"
+        "fastbots_chatbot_embed_code",
+        array(
+            "type"              => "string",
+            "sanitize_callback" => "esc_url_raw",
+            "default"           => "",
+        )
+    );
+    register_setting(
+        "fastbots-settings-group",
+        "fastbots_chatbot_embed_code_two",
+        array(
+            "type"              => "string",
+            "sanitize_callback" => "sanitize_text_field",
+            "default"           => "",
+        )
     );
 }

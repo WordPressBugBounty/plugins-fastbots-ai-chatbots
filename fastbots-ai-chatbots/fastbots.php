@@ -3,7 +3,7 @@
  * Plugin Name:       FastBots
  * Plugin URI:        https://wordpress.org/plugins/fastbots/
  * Description: Easily add your FastBots AI chatbot to your WordPress site.
- * Version:           1.0.12
+ * Version:           1.0.13
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            FastBots
@@ -23,29 +23,23 @@ define( 'FASTBOTS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 require_once(FASTBOTS_PLUGIN_DIR . 'settings-page.php');
 
 function fastbots_chatbot_to_header() {
-    $embed_code = get_option('fastbots_chatbot_embed_code');
-	$embed_code_two = get_option('fastbots_chatbot_embed_code_two');
-    if (!empty($embed_code)&&!empty($embed_code_two)) {
-		$full_embed_code = "<script>
-		var scriptElement = document.createElement('script');
-	  
-		scriptElement.src = '".$embed_code."';
-		scriptElement.setAttribute('data-bot-id', '".$embed_code_two."');
-		scriptElement.defer = true;
-	  
-		document.head.appendChild(scriptElement);
-	  </script>";
-        echo wp_kses(
-		    $full_embed_code,
-		    array(
-		        'script'      => array(
-		            'src'  => array(),
-		            'data-bot-id' => array(),
-		            'defer'  => array(),
-		        ),
-		    )
-		);
+    $embed_url = get_option('fastbots_chatbot_embed_code');
+    $bot_id    = get_option('fastbots_chatbot_embed_code_two');
+
+    if ( empty( $embed_url ) || empty( $bot_id ) ) {
+        return;
     }
+
+    $safe_url = esc_url( $embed_url );
+    if ( empty( $safe_url ) ) {
+        return;
+    }
+
+    printf(
+        '<script defer src="%s" data-bot-id="%s"></script>',
+        $safe_url,
+        esc_attr( $bot_id )
+    );
 }
 
 add_action('wp_head', 'fastbots_chatbot_to_header');
