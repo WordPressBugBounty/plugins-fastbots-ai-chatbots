@@ -2,9 +2,9 @@
 Contributors: fastbots
 Tags: AI, Chatbot, FastBots
 Requires at least: 5.2
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPL v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,11 @@ Updated version.
 
 = 1.0.13 =
 Security: fixed authenticated (Administrator+) Stored Cross-Site Scripting via plugin settings (CVE-2026-6800). Source URL and Bot ID are now sanitized on save and properly escaped on output.
+
+= 1.0.14 =
+Confirmed compatibility with WordPress 7.1.
+Load the chatbot embed through the WordPress script enqueue system.
+Updated plugin metadata to follow WordPress.org directory requirements.
 
 == Installation ==
 
